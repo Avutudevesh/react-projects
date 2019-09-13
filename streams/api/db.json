@@ -1,4 +1,19 @@
 {
-    "streams": []
-
+  "streams": [
+    {
+      "title": "My Stream",
+      "description": "First Stream",
+      "id": 1
+    },
+    {
+      "title": "Second Stream",
+      "description": "This is my second stream",
+      "id": 2
+    },
+    {
+      "title": "Navigation Test",
+      "description": "changed the navigation tets",
+      "id": 4
+    }
+  ]
 }
