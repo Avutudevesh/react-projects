@@ -39,6 +39,7 @@ exports.signup = function(req, res, next){
 
 
 exports.signin = function(req,res,next){
+    console.log(req.isAuthenticated());
     res.send({token: tokenForUser(req.user)});
         
 }

@@ -1,0 +1,33 @@
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+
+class Header extends React.Component {
+    renderLinks() {
+        if(this.props.authenticated){
+            return(<div>
+            <Link to='/signout'>SignOut</Link>
+            <Link to='/feature'>Feature</Link>
+            </div>)
+        } else {
+            return(
+            <div>
+            <Link to='/signup'>SignUp</Link>
+            <Link to='/signin'>SignIn</Link>
+            </div>
+            )
+        }
+    }
+    render() {
+        return (
+            <div>
+                <Link to='/'>Redux Auth</Link>
+                {this.renderLinks()}
+            </div>
+        );
+    }
+}
+const mapStateToProps = (state) => {
+    return{authenticated: state.auth.authenticated};
+}
+export default connect(mapStateToProps)(Header);

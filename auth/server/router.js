@@ -11,4 +11,9 @@ module.exports = function(app) {
     });
     app.post('/signup', Authentication.signup);
     app.post('/signin', requireSignin, Authentication.signin);
+
+    app.get('/test', function(req, res, next){
+        console.log('User is:' + req.isAuthenticated());
+        res.end('test successful');
+    });
 }
